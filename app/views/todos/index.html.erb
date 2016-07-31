@@ -1,0 +1,19 @@
+<h1>To do list</h1>
+
+<% @todos.each do |todo| %>
+  <p>
+  <%= link_to todo.name, todo_path(todo) %>
+  </p>
+<% end %>
+<%= link_to new_todo_path, :class => "btn-floating btn-large waves-effect waves-light red" do%>
+  <i class="material-icons">add</i>
+<% end %>
+
+
+<h1>Completed</h1>
+
+<% @completed_todos.each do |todo| %>
+  <p>
+  <%= link_to todo.name, todo_path(todo) %>
+  </p>
+<% end %>

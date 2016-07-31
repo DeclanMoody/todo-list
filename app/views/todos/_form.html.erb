@@ -1,0 +1,11 @@
+<%= form_for @todo do |f|  %>
+  <div class="input-field col s6">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "validate" %>
+  </div>
+  <%= button_tag(:class => "btn waves-effect waves-light") do %>
+    Submit
+    <i class="material-icons right">send</i>
+  <% end %>
+<% end %>
+
