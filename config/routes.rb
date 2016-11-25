@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: "people#index"
   resources :todos
   post 'todos/:id', to: 'todos#completed'
+  mount ActionCable.server => '/cable'
+  resources :rooms
 end
