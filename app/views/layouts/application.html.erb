@@ -17,6 +17,7 @@
           <%= link_to "Home Page", root_path, :class => "brand-logo" %>
           <ul class="right hide-on-med-and-down">
             <li class="<%= "active" if current_page?(todos_path) %>"><%= link_to "To Do List", todos_path %></li>
+            <li class="<%= "active" if current_page?(rooms_show_path) %>"><%= link_to "Chat", rooms_show_path %></li>
           </ul>
         </div>
       </nav>

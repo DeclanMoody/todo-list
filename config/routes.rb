@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post 'todos/:id', to: 'todos#completed'
   mount ActionCable.server => '/cable'
   resources :rooms
+  get '/rooms/show', to: 'rooms#show'
 end
