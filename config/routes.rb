@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   resources :rooms
   get '/rooms/show', to: 'rooms#show'
+  get '/guesses/show', to: 'guesses#show'
+  resources :guesses
 end

@@ -1,0 +1,9 @@
+<h1>Try to guess my number it's between 1 and 20</h1>
+<%= form_for @guess do |f| %>
+  <%= f.label :guess %>
+  <%= f.text_field :guess %>
+  <%= button_tag(:class => "btn waves-effect waves-light") do %>
+    Submit
+    <i class="material-icons right">send</i>
+  <% end %>
+<% end %>

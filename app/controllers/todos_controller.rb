@@ -47,7 +47,7 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     if @todo.update(:completed => true)
       redirect_to todos_path
-    else 
+    else
       render :show
     end
   end

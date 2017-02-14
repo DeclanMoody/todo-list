@@ -1,0 +1,20 @@
+<% if @number == @guess %>
+  <ul>
+    <h1>Congratulations you got my number</h1>
+  </ul>
+  <%= link_to "Start New Game", guesses_path, :class => "waves-effect waves-light btn" %>
+<% elsif @number != @guess %>
+  <ul>
+    <h1>You didn't get the number</h1>
+  </ul>
+  <% if @number > @guess %>
+    <ul>
+      <h3>you were too low</h3>
+    </ul>
+  <% elsif @number < @guess %>
+    <ul>
+      <h3>You were too high</h3>
+    </ul>
+  <% end %>
+  <%= link_to "Try again", new_guess_path, :class => "waves-effect waves-light btn" %>
+<% end %>
