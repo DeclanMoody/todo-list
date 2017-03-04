@@ -19,6 +19,7 @@
             <li class="<%= "active" if current_page?(todos_path) %>"><%= link_to "To Do List", todos_path %></li>
             <li class="<%= "active" if current_page?(rooms_show_path) %>"><%= link_to "Chat", rooms_show_path %></li>
             <li class="<%= "active" if current_page?(guesses_path) %>"><%= link_to "Gessing Game", guesses_path %></li>
+            <li class="<%= "active" if current_page?(ai_guesses_path) %>"><%= link_to "AI Gessing Game", ai_guesses_path %></li>
           </ul>
         </div>
       </nav>

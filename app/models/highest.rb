@@ -1,0 +1,2 @@
+class Highest < ApplicationRecord
+end

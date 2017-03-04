@@ -1,0 +1,2 @@
+class Lowest < ApplicationRecord
+end

@@ -1,0 +1,7 @@
+<h1>Ok I'll guess</h1>
+<h3>Is your number:</h3>
+<h5><%= @guess %></h5>
+
+<%= link_to "You got it", correct_ai_guesses_path, :class => "waves-effect waves-light btn" %>
+<%= link_to "No, too low", low_ai_guesses_path, :class => "waves-effect waves-light btn" %>
+<%= link_to "No, too high", high_ai_guesses_path, :class => "waves-effect waves-light btn" %>
