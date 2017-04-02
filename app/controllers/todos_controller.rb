@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.where(:completed => false)
-    @completed_todos = Todo.where(:completed => true)
+    @todos = Todo.where(:completed => false, :user_id => current_user.id)
+    @completed_todos = Todo.where(:completed => true, :user_id => current_user.id)
   end
 
   def show
@@ -9,11 +9,11 @@ class TodosController < ApplicationController
   end
 
   def new
-    @todo = Todo.new
+    @todo = current_user.todos.build
   end
-  
+
   def create
-    @todo = Todo.new(todo_params)
+    @todo = current_user.todos.build(todo_params)
     if @todo.save
       redirect_to todos_path
     else

@@ -13,10 +13,24 @@
 
     <div class="row">
       <nav>
-        <div class="nav-wrapper light-blue darken-2">
+        <div class="nav-wrapper light-blue darken-2 center">
           <%= link_to "Home Page", root_path, :class => "brand-logo" %>
+          <ul class="left hide-on-med-and-down">
+            <% if current_user %>
+              <%= link_to "Logout", destroy_user_session_path,:data => { method: :delete, :confirm => "Are you sure?"} %>
+            <% else%>
+              <li>
+                <%= link_to "Login", new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to "Register", new_user_registration_path %>
+              </li>
+            <% end %>
+          </ul>
           <ul class="right hide-on-med-and-down">
-            <li class="<%= "active" if current_page?(todos_path) %>"><%= link_to "To Do List", todos_path %></li>
+            <% if current_user %>
+              <li class="<%= "active" if current_page?(todos_path) %>"><%= link_to "To Do List", todos_path %></li>
+            <% end %>
             <li class="<%= "active" if current_page?(rooms_show_path) %>"><%= link_to "Chat", rooms_show_path %></li>
             <li class="<%= "active" if current_page?(guesses_path) %>"><%= link_to "Gessing Game", guesses_path %></li>
             <li class="<%= "active" if current_page?(ai_guesses_path) %>"><%= link_to "AI Gessing Game", ai_guesses_path %></li>
